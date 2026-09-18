@@ -3,7 +3,9 @@
  * DASES ? Orby AI Gemini Backend Gateway
  * Powered by Google Gemini API
  */
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 header('Content-Type: application/json; charset=utf-8');
 
 // Load local environment / config if present (never committed to git)
